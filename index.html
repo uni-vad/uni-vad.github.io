@@ -118,7 +118,7 @@
               </span>
               
               <span class="link-block">
-                <a href="" target="_blank" 
+                <a href="https://github.com/CASIA-IVA-Lab/AnomalyGPT" target="_blank" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -139,7 +139,7 @@
               
               
               <span class="link-block">
-                <a href="" target="_blank"
+                <a href="https://www.youtube.com/watch?v=lcxBfy0YnNA" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-youtube"></i>
@@ -149,7 +149,7 @@
               </span>
               
               <span class="link-block">
-                <a href="" target="_blank"
+                <a href="https://huggingface.co/FantasticGNU/AnomalyGPT" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fa fa-laugh"></i>
@@ -195,7 +195,7 @@
 
                     <div class="publication-video">
                         <!-- Youtube embed code here -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/96XgdQle7EY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lcxBfy0YnNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -208,41 +208,51 @@
         <h2 class="title is-3">Model</h2>
         <div class="content has-text-justified">
           <p>
-           PandaGPT combines the multimodal encoders from ImageBind and the large language models from Vicuna, achieving impressive capabilities across six modalities (text, image/video, audio, depth, thermal, and IMU). <b>Notably the current version of PandaGPT is only trained with aligned image-text pairs </b> (160k image-language instruction-following data released by <a href="https://llava-vl.github.io/">LLaVa</a> and <a href="https://minigpt-4.github.io/">Mini-GPT4</a>), with a small set of new parameters introduced:
+            <b>AnomalyGPT</b> is the first Large Vision-Language Model (LVLM) based Industrial Anomaly Detection (IAD) method that can detect anomalies in industrial images without the need for manually specified thresholds. Existing IAD methods can only provide anomaly scores and need manually threshold setting, while existing LVLMs cannot detect anomalies in the image. AnomalyGPT can not only indicate the presence and location of anomaly but also provide information about the image.
           </p>
-          <ul>
+          <p align='center'>
+            <img id="model" width="70%" src="images/compare.png">
+          </p>
+          <h4 class="subtitle has-text-centered">
+            <p style="font-family:Times New Roman"><b>Comparison between AnomalyGPT and existing methods.</b></p>
+          </h3>
+          <p>
+            We leverage a pre-trained image encoder and a Large Language Model (LLM) to align IAD images and their corresponding textual descriptions via simulated anomaly data. We employ a lightweight, visual-textual feature-matching-based image decoder to obtain localization result, and design a prompt learner to provide fine-grained semantic to LLM and fine-tune the LVLM using prompt embeddings. Our method can also detect anomalies for previously unseen items with few normal sample provided.  
+            <!-- The query image is passed to the frozen image encoder and the patch-level features extracted from intermediate layers are fed into image decoder to compute their similarity with normal and abnormal texts to obtain localization result. The final features extracted by the image encoder are fed to a linear layer and then passed to the prompt learner along with the localization result. The prompt learner converts them into prompt embeddings suitable for input into the LLM together with user text inputs. In few-shot setting, the patch-level features from normal samples are stored in memory banks and the localization result can be obtained by calculating the distance between query patches and their most similar counterparts in the memory bank. -->
+          </p>
+          <!-- <ul>
             <li>A linear projection matrix connects the multimodal features from ImageBind to Vicuna</li>
             <li>Additional LoRA weights on the Vicuna’s attention modules</li>
 
-          </ul>
+          </ul> -->
         </div>  
-        <img id="model" width="100%" src="images/AnomaltGPT.png">
+        <img id="model" width="100%" src="images/AnomalyGPT.png">
         <h3 class="subtitle has-text-centered">
           <p style="font-family:Times New Roman"><b>The architecture of AnomalyGPT.</b></p>
         </h3>
 
       </div>
     </div>
-    <br>
+    <!-- <br>
     <br>
       <div class="columns is-centered has-text-centered">
         <div class="column is-six-fifths">
           <h2 class="title is-3">Capabilities</h2>
           <div class="content has-text-justified">
             <p>
-              Compared to existing multimodal instruction-following models trained individually for one particular modality, PandaGPT can understand and combine information in different forms together, including text, image/video, audio, depth (3D), thermal (infrared radiation), and inertial measurement units (IMU). We find that the capabilities of PandaGPT include but are not limited to <b>(with examples attached in the bottom of this page)</b>:
+              Compared to existing IAD methods that can only provide anomaly scores and existing LVLMs that cannot detect anomalies in industrial images. AnomalyGPT can not only directly indicate the presence and location of anomaly without manually threshold setting but also provide information about the image. We find that the capabilities of AnomalyGPT include but are not limited to <b>(with examples attached in the bottom of this page):</b>
               <ul>
-                <li><b>image/video grounded question answering</b>.</li>
+                <li><b>determining whether an image contains anomalies</b>.</li>
                 <li><b>image/video inspired creative writing</b>. </li>
                 <li><b>visual and auditory reasoning</b>.</li>
                 <li><b>multimodal arithmetic</b>.</li>
-                <li><b>...</b>. <span style="font-size: 95%;">(explore our <a href="https://huggingface.co/spaces/GMFTBY/PandaGPT">demo</a> on your own!)</li>
+                <li><b>...</b>. <span style="font-size: 95%;">(explore our <a href="">demo</a> on your own!)</li>
               </ul>  
            </p>
           </div>
         </div>
     </div>
-  </div>
+  </div> -->
 </section>
 
 <section class="section" id="BibTeX">
