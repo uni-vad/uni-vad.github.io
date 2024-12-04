@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="AnomalyGPT">
-  <meta name="keywords" content="AD, open-source, multimodal">
+        content="UniVAD">
+  <meta name="keywords" content="anomaly detection, few-shot, training-free">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AnomalyGPT</title>
+  <title>UniVAD</title>
 
   <meta name="google-site-verification" content="6lbYN1vX7A4sD8SrVniq84UEKyEUSBgxeP7d3FjuuK0" />
 
@@ -45,15 +45,16 @@
     }
 
     .pic{
-        width: 500px;
-        padding: 10px;
-        border: 1px solid #ccc;
+        width: 900px;
+        padding: 20px;
+        border: 2px solid #ccc;
         border-radius: 5px;
         background-color: #fff;
+        margin:auto;
     }
 
     .pic img{
-        width: 500px;
+        width: 900px;
     }
 
     .custom-image {
@@ -74,8 +75,8 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">AnomalyGPT: </h1>
-          <h2 class="title is-2 publication-title">Detecting Industrial Anomalies using Large <br> Vision-Language Models</h2>
+          <h1 class="title is-1 publication-title">UniVAD: A Training-free Unified Model for Few-shot Visual Anomaly Detection</h1>
+          <!-- <h2 class="title is-2 publication-title"></h2> -->
           <div class="is-size-5">
             <span class="author-block">
                 <a href="" style="font-weight:normal;">Zhaopeng Gu<sup>1,2</sup></a>,                
@@ -115,7 +116,7 @@
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2308.15366" target="_blank"
+                <a href="#" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -125,7 +126,7 @@
               </span>
               
               <span class="link-block">
-                <a href="https://github.com/CASIA-IVA-Lab/AnomalyGPT" target="_blank" 
+                <a href="#" target="_blank" 
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -135,7 +136,7 @@
               </span>
               
               <span class="link-block">
-                      <a href="https://huggingface.co/spaces/FantasticGNU/AnomalyGPT" target="_blank"
+                      <a href="#" target="_blank"
                          class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                         🤗
@@ -146,7 +147,7 @@
               
               
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=lcxBfy0YnNA" target="_blank"
+                <a href="https://youtu.be/7JiRTbb_PEY?si=lv3IxqMtSKDst0nN" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fab fa-youtube"></i>
@@ -156,7 +157,7 @@
               </span>
               
               <span class="link-block">
-                <a href="https://huggingface.co/FantasticGNU/AnomalyGPT" target="_blank"
+                <a href="#" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fa fa-laugh"></i>
@@ -185,7 +186,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Large Vision-Language Models (LVLMs) such as MiniGPT-4 and LLaVA have demonstrated the capability of understanding images and achieved remarkable performance in various visual tasks. Despite their strong abilities in recognizing common objects due to extensive training datasets, they lack specific domain knowledge and have a weaker understanding of localized details within objects, which hinders their effectiveness in the Industrial Anomaly Detection (IAD) task. On the other hand, most existing IAD methods only provide anomaly scores and necessitate the manual setting of thresholds to distinguish between normal and abnormal samples, which restricts their practical implementation. In this paper, we explore the utilization of LVLM to address the IAD problem and propose AnomalyGPT, a novel IAD approach based on LVLM. We generate training data by simulating anomalous images and producing corresponding textual descriptions for each image. We also employ an image decoder to provide fine-grained semantic and design a prompt learner to fine-tune the LVLM using prompt embeddings. Our AnomalyGPT eliminates the need for manual threshold adjustments, thus directly assesses the presence and locations of anomalies. Additionally, AnomalyGPT supports multi-turn dialogues and exhibits impressive few-shot in-context learning capabilities. With only one normal shot, AnomalyGPT achieves the state-of-the-art performance with an accuracy of 86.1%, an image-level AUC of 94.1%, and a pixel-level AUC of 95.3% on the MVTec-AD dataset.
+            Visual Anomaly Detection (VAD) aims to identify abnormal samples in images that deviate from normal patterns, covering multiple domains, including industrial, logical, and medical fields. Due to the domain gaps between these fields, existing VAD methods are typically tailored to each domain, with specialized detection techniques and model architectures that are difficult to generalize across different domains. Moreover, even within the same domain, current VAD approaches often follow a "one-category-one-model" paradigm, requiring large amounts of normal samples to train class-specific models, resulting in poor generalizability and hindering unified evaluation across domains. To address this issue, we propose a generalized few-shot VAD method, UniVAD, capable of detecting anomalies across various domains, such as industrial, logical, and medical anomalies, with a training-free unified model. UniVAD only needs few normal samples as references during testing to detect anomalies in previously unseen objects, without training on the specific domain. Specifically, UniVAD employs a Contextual Component Clustering (C<sup>3</sup>) module based on clustering and vision foundation models to segment components within the image accurately, and leverages Component-Aware Patch Matching (CAPM) and Graph-Enhanced Component Modeling (GECM) modules to detect anomalies at different semantic levels, which are aggregated to produce the final detection result. We conduct experiments on nine datasets spanning industrial, logical, and medical fields, and the results demonstrate that UniVAD achieves state-of-the-art performance in few-shot anomaly detection tasks across multiple domains, outperforming domain-specific anomaly detection models. The code will be made publicly available.
 </b>
           </p>
         </div>
@@ -202,7 +203,7 @@
 
                     <div class="publication-video">
                         <!-- Youtube embed code here -->
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/lcxBfy0YnNA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/7JiRTbb_PEY?si=duFDIjRLiTPu9seQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
@@ -215,27 +216,21 @@
         <h2 class="title is-3">Model</h2>
         <div class="content has-text-justified">
           <p>
-            <b>AnomalyGPT</b> is the first Large Vision-Language Model (LVLM) based Industrial Anomaly Detection (IAD) method that can detect anomalies in industrial images without the need for manually specified thresholds. Existing IAD methods can only provide anomaly scores and need manually threshold setting, while existing LVLMs cannot detect anomalies in the image. AnomalyGPT can not only indicate the presence and location of anomaly but also provide information about the image.
+            <b>UniVAD</b> is the first training-free unified method for Visual Anomaly Detection (VAD) that can detect anomalies across multiple domains, including industrial, logical, and medical images, without domain-specific training. Unlike existing VAD methods that require separate models for each domain, UniVAD leverages a unified approach that detects anomalies using only a few normal samples of the target category during testing.
           </p>
           <p align='center'>
-            <img id="model" width="70%" src="images/compare.png">
+            <img id="model" width="70%" src="images/compare.jpg">
           </p>
           <h4 class="subtitle has-text-centered">
-            <p style="font-family:Times New Roman"><b>Comparison between AnomalyGPT and existing methods.</b></p>
+            <p style="font-family:Times New Roman"><b>Comparison between UniVAD and existing methods.</b></p>
           </h4>
           <p>
-            We leverage a pre-trained image encoder and a Large Language Model (LLM) to align IAD images and their corresponding textual descriptions via simulated anomaly data. We employ a lightweight, visual-textual feature-matching-based image decoder to obtain localization result, and design a prompt learner to provide fine-grained semantic to LLM and fine-tune the LVLM using prompt embeddings. Our method can also detect anomalies for previously unseen items with few normal sample provided.  
-            <!-- The query image is passed to the frozen image encoder and the patch-level features extracted from intermediate layers are fed into image decoder to compute their similarity with normal and abnormal texts to obtain localization result. The final features extracted by the image encoder are fed to a linear layer and then passed to the prompt learner along with the localization result. The prompt learner converts them into prompt embeddings suitable for input into the LLM together with user text inputs. In few-shot setting, the patch-level features from normal samples are stored in memory banks and the localization result can be obtained by calculating the distance between query patches and their most similar counterparts in the memory bank. -->
+            UniVAD incorporates a contextual component clustering module to segment object components and utilizes a component-aware patch-matching module for detecting patch-level anomalies. Additionally, a graph-enhanced component modeling module is used to capture relationships between components, enabling the detection of more complex logical anomalies. Our method demonstrates state-of-the-art performance in few-shot anomaly detection across various datasets, outperforming domain-specific models.
           </p>
-          <!-- <ul>
-            <li>A linear projection matrix connects the multimodal features from ImageBind to Vicuna</li>
-            <li>Additional LoRA weights on the Vicuna’s attention modules</li>
-
-          </ul> -->
         </div>  
-        <img id="model" width="100%" src="images/AnomalyGPT.png">
+        <img id="model" width="100%" src="images/architecture.jpg">
         <h3 class="subtitle has-text-centered">
-          <p style="font-family:Times New Roman"><b>The architecture of AnomalyGPT.</b></p>
+          <p style="font-family:Times New Roman"><b>The architecture of UniVAD.</b></p>
         </h3>
 
       </div>
@@ -247,13 +242,13 @@
           <h2 class="title is-3">Capabilities</h2>
           <div class="content has-text-justified">
             <p>
-              Compared to existing IAD methods that can only provide anomaly scores and existing LVLMs that cannot detect anomalies in industrial images. AnomalyGPT can not only directly indicate the presence and location of anomaly without manually threshold setting but also provide information about the image. We find that the capabilities of AnomalyGPT include but are not limited to <b>(with examples attached in the bottom of this page):</b>
+              Compared to existing VAD methods that require domain-specific training and separate models, UniVAD can directly detect anomalies across multiple domains with only a few normal samples for reference. We find that the capabilities of UniVAD include but are not limited to <b>(with examples attached at the bottom of this page):</b>
               <ul>
-                <li><b>indicating whether an image contains anomalies</b>.</li>
-                <li><b>pinpointing the locations of anomalies</b>. </li>
-                <li><b>engaging in multi-turn dialogues related to the image</b>.</li>
-                <li><b>conversing in English and Chinese</b>.</li>
-                <li><b>...</b>. <span style="font-size: 95%;">(explore our <a href="https://huggingface.co/spaces/FantasticGNU/AnomalyGPT">demo</a> on your own!)</li>
+                <li><b>Industrial anomaly detection and segmentation</b>.</li>
+                <li><b>Logical anomaly detection and segmentation</b>. </li>
+                <li><b>Medical anomaly detection and segmentation</b>.</li>
+                <li><b>Crack Segmentation</b>.</li>
+                <li><b>...</b>. <span style="font-size: 95%;">(explore our <a href="#">demo</a> on your own!)</li>
               </ul>  
            </p>
           </div>
@@ -266,12 +261,12 @@
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @article{gu2023anomalygpt,
+      <!-- @article{gu2023anomalygpt,
         title={AnomalyGPT: Detecting Industrial Anomalies using Large Vision-Language Models},
         author={Gu, Zhaopeng and Zhu, Bingke and Zhu, Guibo and Chen, Yingying and Tang, Ming and Wang, Jinqiao},
         journal={arXiv preprint arXiv:2308.15366},
         year={2023}
-      }
+      } -->
 </code></pre>
   </div>
 </section>
@@ -295,9 +290,12 @@
 <section class="section">
 <div class="container is-max-desktop content">
   <h2 class="title is-3">Examples</h2>
-  <div class="columns" >
-    <div class="column is-half">
-      <div class="box" style="max-width: 100%"><div class="pic" style="max-width: 100%"><img src="images/demo_1.png" alt="" style="max-width: 100%"></div></div>
+  <div class="box" style="max-width: 100%"><div class="pic" style="max-width: 100%"><img src="images/demo_1.jpg" alt="" style="max-width: 100%"></div></div>
+  <div class="box" style="max-width: 100%"><div class="pic" style="max-width: 100%"><img src="images/demo_2.jpg" alt="" style="max-width: 100%"></div></div>
+  <!-- <div class="columns" > -->
+    
+    <!-- <div class="column is-half">
+      <div class="box" style="max-width: 100%"><div class="pic" style="max-width: 100%"><img src="images/demo_1.jpg" alt="" style="max-width: 100%"></div></div>
       <h4 class="subtitle has-text-centered" style="margin-bottom: 60px;">
         <p style="font-family:Times New Roman"><b>An image of concrete with crack.</b></p>
       </h4>
@@ -332,9 +330,9 @@
       <div class="box" style="max-width: 100%"><div class="pic" style="max-width: 100%"><img src="images/demo_3.png" alt="" style="max-width: 100%"></div></div>
       <h4 class="subtitle has-text-centered">
         <p style="font-family:Times New Roman"><b>A piece of normal fabric.</b></p>
-      </h4>
+      </h4> -->
 
-    </div>
+    <!-- </div> -->
   </div>
   
   
